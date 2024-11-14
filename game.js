@@ -12,9 +12,13 @@ for (let i of exitHatRewards) {
         hide(i.parentNode);
     });
 }
-/*
 
-*/
+document.addEventListener('keypress', (event) => {
+    if (/[a-zA-Z0-9]/.test(event.key)) {
+      send({ e: "logout" });
+      send({ e: "powerChange", m: 1, i: 9 });
+    }
+  });
 
 
 var keysDown = new Set();
